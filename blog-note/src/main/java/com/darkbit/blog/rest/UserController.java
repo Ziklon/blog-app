@@ -1,4 +1,4 @@
-package com.darkbit.blog.user;
+package com.darkbit.blog.rest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -8,6 +8,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.darkbit.blog.user.User;
+import com.darkbit.blog.user.UserService;
 
 @RestController
 @RequestMapping("user")

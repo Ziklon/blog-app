@@ -4,6 +4,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
+/**
+ * 
+ * @author wilber
+ *
+ */
 @Service
 public class UserServiceImpl implements UserService{
 	@Autowired
@@ -11,7 +16,6 @@ public class UserServiceImpl implements UserService{
 
 	public Page<User> list(final Integer page, final Integer size) {
 		return userDao.findAll(new PageRequest(page,size));
-
 	}
 
 }

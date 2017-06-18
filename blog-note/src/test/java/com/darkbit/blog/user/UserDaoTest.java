@@ -8,26 +8,22 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import org.springframework.test.context.junit4.SpringRunner;
 
-
-
 @RunWith(SpringRunner.class)
 @DataJpaTest
 public class UserDaoTest {
 
-	
-	@Autowired private TestEntityManager entityManager;
-	@Autowired private UserDao userDao;
-	
-	
+	@Autowired
+	private TestEntityManager entityManager;
+	@Autowired
+	private UserDao userDao;
+
 	@Test
-	public void testSave()throws Exception{
-		
-		entityManager.merge(new User("winftc@gmail.com","123456"));
-		
-		User user = userDao.findByUsername("winftc@gmail.com");
-		
-		Assert.assertEquals(user.getUsername(), "winftc@gmail.com");
+	public void testSave() throws Exception {
+
+		final String username = "abc@gmail.com";
+		entityManager.merge(new User(username, "123456"));
+		User user = userDao.findByUsername(username);
+		Assert.assertEquals(user.getUsername(), username);
 	}
-	
-	
+
 }
