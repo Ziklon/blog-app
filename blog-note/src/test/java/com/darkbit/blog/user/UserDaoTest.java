@@ -20,7 +20,7 @@ public class UserDaoTest {
 	@Test
 	public void testSave() throws Exception {
 
-		final String username = "abc@gmail.com";
+		final String username = "abcd@gmail.com";
 		entityManager.merge(new User(username, "123456"));
 		User user = userDao.findByUsername(username);
 		Assert.assertEquals(user.getUsername(), username);
